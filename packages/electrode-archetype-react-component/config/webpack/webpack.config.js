@@ -14,6 +14,8 @@ const jsonConfig = require("./partial/json.js");
 const optimizeConfig = require("./partial/optimize.js");
 const sourceMapsConfig = require("./partial/sourcemaps.js");
 const stylusConfig = require("./partial/stylus.js");
+const stylusModulesConfig = require("./partial/stylusModules.js");
+
 
 const archetypeNodeModules = path.join(__dirname, "../../", "node_modules");
 const archetypeDevNodeModules = path.join(
@@ -52,7 +54,8 @@ const createConfig = _.flowRight(
   jsonConfig(),
   optimizeConfig(),
   sourceMapsConfig(),
-  stylusConfig()
+  stylusConfig(),
+  stylusModulesConfig()
 );
 
 module.exports = createConfig(baseConfiguration);
